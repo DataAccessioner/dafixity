@@ -4,14 +4,39 @@
 
   <groupId>org.dataaccessioner</groupId>
   <artifactId>dafixity</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>jar</packaging>
 
   <name>dafixity</name>
-  <url>http://maven.apache.org</url>
+  <description>Checksum verifier for Files processed by Data Accessioner.</description>
+  <url>http://dataaccessioner.org/downloads/da-fixity</url>
+
+  <developers>
+    <developer>
+      <id>sprater</id>
+      <name>Scott Prater</name>
+      <email>sprater@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <url>https://github.com/sprater/dafixity</url>
+    <connection>scm:git:git://github.com/sprater/dafixity.git</connection>
+    <developerConnection>scm:git:git@github.com:sprater/dafixity.git</developerConnection>
+  </scm>
+  <distributionManagement>
+    <repository>
+      <id>dataaccessioner.org</id>
+      <name>Data Accessioner Maven Repository</name>
+    </repository>
+  </distributionManagement>
 
   <properties>
+    <java.version>1.8</java.version>
+    <maven.enforcer.plugin>1.2</maven.enforcer.plugin>
+    <maven.version.range>[2.2.1,3.1.0)</maven.version.range>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <start-class>org.dataaccessioner.DAFixity</start-class>
   </properties>
 
   <dependencies>
@@ -30,10 +55,83 @@
 
     <!-- Test dependencies -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.10</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>2.19.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.6</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.4.3</version>
+        <executions>
+          <!-- Run shade goal on package phase -->
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>org.dataaccessioner.DAFixity</mainClass>
+                </transformer>
+              </transformers>
+              <filters>
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
+                </filter>
+              </filters>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.5.1</version>
+        <configuration>
+          <descriptors>
+            <descriptor>src/assembly/assembly.xml</descriptor>
+          </descriptors>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
