@@ -1,38 +1,36 @@
+/*
+ * Copyright (c) 2017.
+ *
+ *     This file is part of DAFixity.
+ *
+ *     DAFixity is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     DAFixity is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package org.dataaccessioner;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 
 /**
  * Unit test for simple App.
  */
-public class DAFixityTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+public class DAFixityTest {
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
+    @Test
+    public void DAFixityTest()
     {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+        Assert.assertTrue(true);
     }
 }
