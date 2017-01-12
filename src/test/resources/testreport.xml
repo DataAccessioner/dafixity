@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://dataaccessioner.org/schema/dda-1-1" name="DAFixity Test Collection">
+  <accession number="dafixity-sample">
+    <ingest_note>DAFixity Test Collection transferred by Scott Prater on Thu Jan 12 10:02:29 CST 2017</ingest_note>
+    <ingest_time>00:00:02.2240</ingest_time>
+    <source_note>Test collection for fixity testing.</source_note>
+    <folder name="test-collection" last_modified="2017-01-12T10:01:33.000">
+      <dcx:description xmlns:dcx="http://purl.org/dc/xml/">
+        <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Scott Prater</dc:creator>
+      </dcx:description>
+      <folder name="folder1" last_modified="2017-01-12T10:00:56.000">
+        <folder name="folder1a" last_modified="2017-01-12T10:00:56.000">
+          <file name="sample1a.jpg" last_modified="2017-01-11T09:13:37.000" size="179867" MD5="329d2ee68ee708bd4421b36025bb166f">
+            <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
+              <premis:objectIdentifier>
+                <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
+                <premis:objectIdentifierValue>9c4a35c7-a4b1-45b4-94ed-86445cbbf054</premis:objectIdentifierValue>
+              </premis:objectIdentifier>
+              <premis:objectCharacteristics>
+                <premis:compositionLevel>0</premis:compositionLevel>
+                <premis:fixity>
+                  <premis:messageDigestAlgorithm>MD5</premis:messageDigestAlgorithm>
+                  <premis:messageDigest>329d2ee68ee708bd4421b36025bb166f</premis:messageDigest>
+                  <premis:messageDigestOriginator>OIS File Information</premis:messageDigestOriginator>
+                </premis:fixity>
+                <premis:size>179867</premis:size>
+                <premis:format>
+                  <premis:formatDesignation>
+                    <premis:formatName>JPEG File Interchange Format</premis:formatName>
+                    <premis:formatVersion>1.01</premis:formatVersion>
+                  </premis:formatDesignation>
+                  <premis:formatRegistry>
+                    <premis:formatRegistryName>http://www.nationalarchives.gov.uk/pronom</premis:formatRegistryName>
+                    <premis:formatRegistryKey>fmt/43</premis:formatRegistryKey>
+                  </premis:formatRegistry>
+                  <premis:formatNote>image/jpeg</premis:formatNote>
+                  <premis:formatNote>DROID Signature File Version: 88</premis:formatNote>
+                  <premis:formatNote>Identified by: Droid v6.1.5</premis:formatNote>
+                  <premis:formatNote>Identified by: Jhove v1.11</premis:formatNote>
+                  <premis:formatNote>Identified by: file utility v5.11</premis:formatNote>
+                  <premis:formatNote>Identified by: Exiftool v10.37</premis:formatNote>
+                  <premis:formatNote>Identified by: NLNZ Metadata Extractor v3.6GA</premis:formatNote>
+                </premis:format>
+              </premis:objectCharacteristics>
+              <premis:originalName>sample1a.jpg</premis:originalName>
+            </premis:object>
+          </file>
+          <file name="sample1a.pdf" last_modified="2017-01-11T09:17:05.000" size="27489" MD5="aa5e1ec3f6cbe32c95982b6e3d511af2">
+            <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
+              <premis:objectIdentifier>
+                <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
+                <premis:objectIdentifierValue>1dc5f8b4-cc03-422d-a38b-8dd2510e5f2b</premis:objectIdentifierValue>
+              </premis:objectIdentifier>
+              <premis:objectCharacteristics>
+                <premis:compositionLevel>0</premis:compositionLevel>
+                <premis:fixity>
+                  <premis:messageDigestAlgorithm>MD5</premis:messageDigestAlgorithm>
+                  <premis:messageDigest>aa5e1ec3f6cbe32c95982b6e3d511af2</premis:messageDigest>
+                  <premis:messageDigestOriginator>OIS File Information</premis:messageDigestOriginator>
+                </premis:fixity>
+                <premis:size>27489</premis:size>
+                <premis:format>
+                  <premis:formatDesignation>
+                    <premis:formatName>Portable Document Format</premis:formatName>
+                    <premis:formatVersion>1.4</premis:formatVersion>
+                  </premis:formatDesignation>
+                  <premis:formatRegistry>
+                    <premis:formatRegistryName>http://www.nationalarchives.gov.uk/pronom</premis:formatRegistryName>
+                    <premis:formatRegistryKey>fmt/18</premis:formatRegistryKey>
+                  </premis:formatRegistry>
+                  <premis:formatNote>application/pdf</premis:formatNote>
+                  <premis:formatNote>DROID Signature File Version: 88</premis:formatNote>
+                  <premis:formatNote>Identified by: Droid v6.1.5</premis:formatNote>
+                  <premis:formatNote>Identified by: Jhove v1.11</premis:formatNote>
+                  <premis:formatNote>Identified by: file utility v5.11</premis:formatNote>
+                  <premis:formatNote>Identified by: Exiftool v10.37</premis:formatNote>
+                  <premis:formatNote>Identified by: NLNZ Metadata Extractor v3.6GA</premis:formatNote>
+                  <premis:formatNote>Identified by: ffident v0.2</premis:formatNote>
+                  <premis:formatNote>Identified by: Tika v1.10</premis:formatNote>
+                </premis:format>
+              </premis:objectCharacteristics>
+              <premis:originalName>sample1a.pdf</premis:originalName>
+            </premis:object>
+          </file>
+        </folder>
+        <folder name="folder1b" last_modified="2017-01-12T10:00:56.000">
+          <file name="sample1b.odt" last_modified="2017-01-11T09:21:20.000" size="13540" MD5="3e23fb8d0968e6b37bb63278d3e27f70">
+            <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
+              <premis:objectIdentifier>
+                <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
+                <premis:objectIdentifierValue>4cc6881e-c12b-40b1-9421-a33e51e18dd4</premis:objectIdentifierValue>
+              </premis:objectIdentifier>
+              <premis:objectCharacteristics>
+                <premis:compositionLevel>0</premis:compositionLevel>
+                <premis:fixity>
+                  <premis:messageDigestAlgorithm>MD5</premis:messageDigestAlgorithm>
+                  <premis:messageDigest>3e23fb8d0968e6b37bb63278d3e27f70</premis:messageDigest>
+                  <premis:messageDigestOriginator>OIS File Information</premis:messageDigestOriginator>
+                </premis:fixity>
+                <premis:size>13540</premis:size>
+                <premis:format>
+                  <premis:formatDesignation>
+                    <premis:formatName>OpenDocument Text</premis:formatName>
+                    <premis:formatVersion>1.1</premis:formatVersion>
+                  </premis:formatDesignation>
+                  <premis:formatRegistry>
+                    <premis:formatRegistryName>http://www.nationalarchives.gov.uk/pronom</premis:formatRegistryName>
+                    <premis:formatRegistryKey>fmt/290</premis:formatRegistryKey>
+                  </premis:formatRegistry>
+                  <premis:formatNote>application/vnd.oasis.opendocument.text</premis:formatNote>
+                  <premis:formatNote>DROID Signature File Version: 88</premis:formatNote>
+                  <premis:formatNote>Identified by: Droid v6.1.5</premis:formatNote>
+                  <premis:formatNote>Identified by: file utility v5.11</premis:formatNote>
+                  <premis:formatNote>Identified by: Exiftool v10.37</premis:formatNote>
+                  <premis:formatNote>Identified by: NLNZ Metadata Extractor v3.6GA</premis:formatNote>
+                  <premis:formatNote>Identified by: Tika v1.10</premis:formatNote>
+                </premis:format>
+              </premis:objectCharacteristics>
+              <premis:originalName>sample1b.odt</premis:originalName>
+            </premis:object>
+          </file>
+        </folder>
+      </folder>
+      <folder name="folder2" last_modified="2017-01-11T09:31:35.000">
+        <file name="sample2.wpd" last_modified="2017-01-11T09:31:02.000" size="1099409" MD5="09f827d28541d6d845447432fdbaf9da">
+          <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
+            <premis:objectIdentifier>
+              <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
+              <premis:objectIdentifierValue>f66ce7f5-9634-486b-8740-1bd5370a8bc6</premis:objectIdentifierValue>
+            </premis:objectIdentifier>
+            <premis:objectCharacteristics>
+              <premis:compositionLevel>0</premis:compositionLevel>
+              <premis:fixity>
+                <premis:messageDigestAlgorithm>MD5</premis:messageDigestAlgorithm>
+                <premis:messageDigest>09f827d28541d6d845447432fdbaf9da</premis:messageDigest>
+                <premis:messageDigestOriginator>OIS File Information</premis:messageDigestOriginator>
+              </premis:fixity>
+              <premis:size>1099409</premis:size>
+              <premis:format>
+                <premis:formatDesignation>
+                  <premis:formatName>WordPerfect Document</premis:formatName>
+                  <premis:formatVersion>6.0</premis:formatVersion>
+                </premis:formatDesignation>
+                <premis:formatRegistry>
+                  <premis:formatRegistryName>http://www.nationalarchives.gov.uk/pronom</premis:formatRegistryName>
+                  <premis:formatRegistryKey>x-fmt/44</premis:formatRegistryKey>
+                </premis:formatRegistry>
+                <premis:formatNote>application/vnd.wordperfect</premis:formatNote>
+                <premis:formatNote>DROID Signature File Version: 88</premis:formatNote>
+                <premis:formatNote>Identified by: Droid v6.1.5</premis:formatNote>
+                <premis:formatNote>Identified by: file utility v5.11</premis:formatNote>
+                <premis:formatNote>Identified by: NLNZ Metadata Extractor v3.6GA</premis:formatNote>
+                <premis:formatNote>Identified by: Tika v1.10</premis:formatNote>
+              </premis:format>
+            </premis:objectCharacteristics>
+            <premis:originalName>sample2.wpd</premis:originalName>
+          </premis:object>
+        </file>
+        <folder name="folder2a" last_modified="2017-01-11T09:35:05.000">
+          <file name="sample2a" last_modified="2017-01-11T09:34:23.000" size="270336" MD5="fa11d8719f82d99f034a9ab2e52ac446">
+            <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
+              <premis:objectIdentifier>
+                <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
+                <premis:objectIdentifierValue>3198466e-bbad-46c8-86bb-9d6d739c4565</premis:objectIdentifierValue>
+              </premis:objectIdentifier>
+              <premis:objectCharacteristics>
+                <premis:compositionLevel>0</premis:compositionLevel>
+                <premis:fixity>
+                  <premis:messageDigestAlgorithm>MD5</premis:messageDigestAlgorithm>
+                  <premis:messageDigest>fa11d8719f82d99f034a9ab2e52ac446</premis:messageDigest>
+                  <premis:messageDigestOriginator>OIS File Information</premis:messageDigestOriginator>
+                </premis:fixity>
+                <premis:size>270336</premis:size>
+                <premis:format>
+                  <premis:formatDesignation>
+                    <premis:formatName>Microsoft Excel</premis:formatName>
+                  </premis:formatDesignation>
+                  <premis:formatNote>application/vnd.ms-excel</premis:formatNote>
+                  <premis:formatNote>Identified by: Exiftool v10.37</premis:formatNote>
+                  <premis:formatNote>Identified by: Tika v1.10</premis:formatNote>
+                </premis:format>
+                <premis:format>
+                  <premis:formatDesignation>
+                    <premis:formatName>Microsoft Excel Format</premis:formatName>
+                  </premis:formatDesignation>
+                  <premis:formatNote>application/vnd.ms-excel</premis:formatNote>
+                  <premis:formatNote>Identified by: ffident v0.2</premis:formatNote>
+                </premis:format>
+              </premis:objectCharacteristics>
+              <premis:originalName>sample2a</premis:originalName>
+            </premis:object>
+          </file>
+        </folder>
+      </folder>
+      <folder name="folder3" last_modified="2017-01-11T09:36:21.000">
+        <folder name="folder3a" last_modified="2017-01-11T09:36:21.000">
+          <folder name="folder3ai" last_modified="2017-01-11T09:38:02.000">
+            <file name="random3ai" last_modified="2017-01-11T09:37:20.000" size="78" MD5="8111830d5c398028e675b45187af10f6">
+              <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
+                <premis:objectIdentifier>
+                  <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
+                  <premis:objectIdentifierValue>1af047c4-b1e6-4aaf-b29d-043eb9b2f150</premis:objectIdentifierValue>
+                </premis:objectIdentifier>
+                <premis:objectCharacteristics>
+                  <premis:compositionLevel>0</premis:compositionLevel>
+                  <premis:fixity>
+                    <premis:messageDigestAlgorithm>MD5</premis:messageDigestAlgorithm>
+                    <premis:messageDigest>8111830d5c398028e675b45187af10f6</premis:messageDigest>
+                    <premis:messageDigestOriginator>OIS File Information</premis:messageDigestOriginator>
+                  </premis:fixity>
+                  <premis:size>78</premis:size>
+                  <premis:format>
+                    <premis:formatDesignation>
+                      <premis:formatName>Unknown Binary</premis:formatName>
+                    </premis:formatDesignation>
+                    <premis:formatNote>application/octet-stream</premis:formatNote>
+                    <premis:formatNote>Identified by: Jhove v1.11</premis:formatNote>
+                  </premis:format>
+                </premis:objectCharacteristics>
+                <premis:originalName>random3ai</premis:originalName>
+              </premis:object>
+            </file>
+          </folder>
+        </folder>
+      </folder>
+    </folder>
+  </accession>
+</collection>
+
