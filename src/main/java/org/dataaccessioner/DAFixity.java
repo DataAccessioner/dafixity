@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017.
+ * Copyright (c) 2017 Scott Prater
  *
  *     This file is part of DAFixity.
  *
