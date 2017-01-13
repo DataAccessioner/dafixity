@@ -141,17 +141,14 @@ public class DAFixity
         for (DAFile dafile : dafiles) {
 
             Date fileStartDate = new Date();
-            String fullpath = Paths.get(new StringBuilder(baseDirectory.getAbsolutePath())
-                    .append(Paths.get(dafile.getFilePath()
-                            .toString())
-                            .toString())
-                    .toString())
-                    .toString();
+
+            String fullpath = getCompletePath(baseDirectory, dafile);
+
             long fileStartTime = System.currentTimeMillis();
             logger.info(FILE_MARKER, "Checking file '" + fullpath +"'");
 
             File file = new File(fullpath);
-            if (! file.isFile() || ! file.canRead()) {
+            if (! checkReadFile(file)) {
                 logger.warn(FILE_MARKER, "File '" + fullpath + "' not found or not readable.  Skipping.");
                 csvreport.info("{};{};{};{};", DATE_FORMAT.format(fileStartDate),
                         dafile.getAccessionID(),
@@ -197,6 +194,22 @@ public class DAFixity
         }
 
         return isOK;
+    }
+
+    public static boolean checkReadFile(File file) {
+        if (! file.isFile() || ! file.canRead()) {
+            return false;
+        }
+        return true;
+    }
+
+    public static String getCompletePath(File baseDirectory, DAFile dafile) {
+        return Paths.get(new StringBuilder(baseDirectory.getAbsolutePath())
+                .append(Paths.get(dafile.getFilePath()
+                        .toString())
+                        .toString())
+                .toString())
+                .toString();
     }
 
     private static void printHelp(Options opts) {
