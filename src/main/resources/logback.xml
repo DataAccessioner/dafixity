@@ -2,17 +2,41 @@
 
 <configuration>
 
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+  <appender name="LOGFILE" class="ch.qos.logback.core.FileAppender">
+    <file>logs/dafixity.log</file>
+    <append>true</append>
     <encoder>
       <pattern>%date{ISO8601} %-5level - %msg%n</pattern>
     </encoder>
   </appender>
 
-  <logger name="org.dataaccessioner" level="INFO" additivity="false">
-    <appender-ref ref="STDOUT" />
+  <appender name="CSVREPORT" class="ch.qos.logback.core.FileAppender">
+    <file>logs/dafixity-report.csv</file>
+    <append>true</append>
+    <encoder>
+      <pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+      <evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
+        <marker>FILE</marker>
+      </evaluator>
+      <onMismatch>NEUTRAL</onMismatch>
+      <onMatch>DENY</onMatch>
+    </filter>
+    <encoder>
+      <pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="csvreport" level="INFO" additivity="false">
+    <appender-ref ref="CSVREPORT" />
   </logger>
 
   <root level="INFO">
+    <appender-ref ref="LOGFILE" />
     <appender-ref ref="STDOUT" />
   </root>
 

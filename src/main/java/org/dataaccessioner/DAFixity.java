@@ -23,6 +23,8 @@ import org.apache.commons.cli.*;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,10 +39,6 @@ import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-// TODO:  add CSVREPORT log appender http://stackoverflow.com/questions/2488558/logback-to-log-different-messages-to-two-files
-//        format:  date;accession ID;file;status;runtime
-// TODO:  documentation
-// TODO:  log to file, minimal output to stdout
 public class DAFixity
 {
 
@@ -48,6 +46,8 @@ public class DAFixity
     private static String version;
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS zzz");
     private static final Logger logger = LoggerFactory.getLogger(DAFixity.class);
+    private static final Logger csvreport = LoggerFactory.getLogger("csvreport");
+    private static final Marker FILE_MARKER = MarkerFactory.getMarker("FILE");
 
     public static void main( String[] args ) {
 
@@ -116,7 +116,7 @@ public class DAFixity
         // Initialize the log
         logger.info( "Running " + NAME + ", version " + version);
         logger.info("Report file is '" + reportFile.getAbsolutePath() + "'");
-        logger.info("Accession directory path is '" + baseDirectory.getAbsolutePath() + "'");
+        logger.info("Parent accession directory path is '" + baseDirectory.getAbsolutePath() + "'");
 
         // Parse the report, get our list of files
         logger.info("Parsing report to get the list of files and their checksums");
@@ -140,6 +140,7 @@ public class DAFixity
 
         for (DAFile dafile : dafiles) {
 
+            Date fileStartDate = new Date();
             String fullpath = Paths.get(new StringBuilder(baseDirectory.getAbsolutePath())
                     .append(Paths.get(dafile.getFilePath()
                             .toString())
@@ -147,18 +148,28 @@ public class DAFixity
                     .toString())
                     .toString();
             long fileStartTime = System.currentTimeMillis();
-            logger.info("Checking file '" + fullpath +"'");
+            logger.info(FILE_MARKER, "Checking file '" + fullpath +"'");
 
             File file = new File(fullpath);
             if (! file.isFile() || ! file.canRead()) {
-                logger.warn("File '" + fullpath + "' not found or not readable.  Skipping.");
+                logger.warn(FILE_MARKER, "File '" + fullpath + "' not found or not readable.  Skipping.");
+                csvreport.info("{};{};{};{};", DATE_FORMAT.format(fileStartDate),
+                        dafile.getAccessionID(),
+                        fullpath,
+                        "FNF");
                 continue;
             }
-            checkFileChecksum(file, dafile.getChecksum());
+            boolean status = checkFileChecksum(file, dafile.getChecksum());
 
             long fileEndTime = System.currentTimeMillis();
             long fileElapsedTime = fileEndTime - fileStartTime;
-            logger.info("'" + file.toString() +"': check runtime: " + getDuration(fileElapsedTime));
+            logger.info(FILE_MARKER, "'" + file.toString() +"': check runtime: " + getDuration(fileElapsedTime));
+
+            csvreport.info("{};{};{};{};{}", DATE_FORMAT.format(fileStartDate),
+                    dafile.getAccessionID(),
+                    fullpath,
+                    Boolean.toString(status),
+                    getDuration(fileElapsedTime));
         }
 
         long endTime = System.currentTimeMillis();
@@ -166,6 +177,8 @@ public class DAFixity
         Date endDate = new Date();
         logger.info("Ending fixity check at " + DATE_FORMAT.format(endDate));
         logger.info("Fixity check run time: " + getDuration(elapsedTime));
+
+
     }
 
     public static boolean checkFileChecksum (File dafile, String storedChecksum) {
@@ -173,11 +186,11 @@ public class DAFixity
         try {
             String md5sum = DigestUtils.md5Hex(new FileInputStream(dafile));
             if (md5sum.equals(storedChecksum)) {
-                logger.info("'" + dafile.toString() + "': OK: checksums match");
+                logger.info(FILE_MARKER, "'" + dafile.toString() + "': OK: checksums match");
                 isOK = true;
             } else {
-                logger.warn("'" + dafile.toString() + "': MISMATCH: checksums do not match");
-                logger.warn("'" + dafile.toString() + "': expected " + storedChecksum + ", got " + md5sum );
+                logger.warn(FILE_MARKER, "'" + dafile.toString() + "': MISMATCH: checksums do not match");
+                logger.warn(FILE_MARKER, "'" + dafile.toString() + "': expected " + storedChecksum + ", got " + md5sum );
             }
         } catch (IOException ioe) {
             logger.error("Error opening '" + dafile.getAbsolutePath() + "': " + ioe.getMessage());
