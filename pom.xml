@@ -156,6 +156,7 @@
         <filtering>true</filtering>
         <includes>
           <include>**/*.properties</include>
+          <include>logback.xml</include>
         </includes>
       </resource>
     </resources>
