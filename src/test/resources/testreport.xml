@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <collection xmlns="http://dataaccessioner.org/schema/dda-1-1" name="DAFixity Test Collection">
   <accession number="dafixity-sample">
-    <ingest_note>DAFixity Test Collection transferred by Scott Prater on Thu Jan 12 10:02:29 CST 2017</ingest_note>
-    <ingest_time>00:00:02.2240</ingest_time>
-    <source_note>Test collection for fixity testing.</source_note>
-    <folder name="test-collection" last_modified="2017-01-12T10:01:33.000">
+    <ingest_note>DAFixity Test Collection transferred by Samuel Muller on Fri Jan 13 08:58:34 CST 2017</ingest_note>
+    <ingest_time>00:00:01.1403</ingest_time>
+    <source_note>Test collection for Data Accesioner fixity testing.</source_note>
+    <folder name="test-collection" last_modified="2017-01-13T08:51:50.000">
       <dcx:description xmlns:dcx="http://purl.org/dc/xml/">
-        <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Scott Prater</dc:creator>
+        <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Johan Feith</dc:creator>
       </dcx:description>
-      <folder name="folder1" last_modified="2017-01-12T10:00:56.000">
-        <folder name="folder1a" last_modified="2017-01-12T10:00:56.000">
-          <file name="sample1a.jpg" last_modified="2017-01-11T09:13:37.000" size="179867" MD5="329d2ee68ee708bd4421b36025bb166f">
+      <folder name="folder1" last_modified="2017-01-13T08:51:28.000">
+        <folder name="folder1a" last_modified="2017-01-13T08:51:28.000">
+          <file name="sample1a.jpg" last_modified="2017-01-13T08:51:28.000" size="179867" MD5="329d2ee68ee708bd4421b36025bb166f">
             <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
               <premis:objectIdentifier>
                 <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
-                <premis:objectIdentifierValue>9c4a35c7-a4b1-45b4-94ed-86445cbbf054</premis:objectIdentifierValue>
+                <premis:objectIdentifierValue>4d9e2101-3022-4773-a2bc-f7946c12b819</premis:objectIdentifierValue>
               </premis:objectIdentifier>
               <premis:objectCharacteristics>
                 <premis:compositionLevel>0</premis:compositionLevel>
@@ -45,11 +45,11 @@
               <premis:originalName>sample1a.jpg</premis:originalName>
             </premis:object>
           </file>
-          <file name="sample1a.pdf" last_modified="2017-01-11T09:17:05.000" size="27489" MD5="aa5e1ec3f6cbe32c95982b6e3d511af2">
+          <file name="sample1a.pdf" last_modified="2017-01-13T08:51:28.000" size="27489" MD5="aa5e1ec3f6cbe32c95982b6e3d511af2">
             <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
               <premis:objectIdentifier>
                 <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
-                <premis:objectIdentifierValue>1dc5f8b4-cc03-422d-a38b-8dd2510e5f2b</premis:objectIdentifierValue>
+                <premis:objectIdentifierValue>e41ca397-d504-469a-adcb-1e219e3bcb08</premis:objectIdentifierValue>
               </premis:objectIdentifier>
               <premis:objectCharacteristics>
                 <premis:compositionLevel>0</premis:compositionLevel>
@@ -83,12 +83,12 @@
             </premis:object>
           </file>
         </folder>
-        <folder name="folder1b" last_modified="2017-01-12T10:00:56.000">
-          <file name="sample1b.odt" last_modified="2017-01-11T09:21:20.000" size="13540" MD5="3e23fb8d0968e6b37bb63278d3e27f70">
+        <folder name="folder1b" last_modified="2017-01-13T08:51:28.000">
+          <file name="sample1b.odt" last_modified="2017-01-13T08:51:28.000" size="13540" MD5="3e23fb8d0968e6b37bb63278d3e27f70">
             <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
               <premis:objectIdentifier>
                 <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
-                <premis:objectIdentifierValue>4cc6881e-c12b-40b1-9421-a33e51e18dd4</premis:objectIdentifierValue>
+                <premis:objectIdentifierValue>1be6fd7e-8963-46a9-aa39-5fa33d617c91</premis:objectIdentifierValue>
               </premis:objectIdentifier>
               <premis:objectCharacteristics>
                 <premis:compositionLevel>0</premis:compositionLevel>
@@ -121,12 +121,12 @@
           </file>
         </folder>
       </folder>
-      <folder name="folder2" last_modified="2017-01-11T09:31:35.000">
-        <file name="sample2.wpd" last_modified="2017-01-11T09:31:02.000" size="1099409" MD5="09f827d28541d6d845447432fdbaf9da">
+      <folder name="folder2" last_modified="2017-01-13T08:51:28.000">
+        <file name="sample2.wpd" last_modified="2017-01-13T08:51:28.000" size="1099409" MD5="09f827d28541d6d845447432fdbaf9da">
           <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
             <premis:objectIdentifier>
               <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
-              <premis:objectIdentifierValue>f66ce7f5-9634-486b-8740-1bd5370a8bc6</premis:objectIdentifierValue>
+              <premis:objectIdentifierValue>76d0fba4-dfa2-4617-900f-291512fa02fe</premis:objectIdentifierValue>
             </premis:objectIdentifier>
             <premis:objectCharacteristics>
               <premis:compositionLevel>0</premis:compositionLevel>
@@ -156,12 +156,12 @@
             <premis:originalName>sample2.wpd</premis:originalName>
           </premis:object>
         </file>
-        <folder name="folder2a" last_modified="2017-01-11T09:35:05.000">
-          <file name="sample2a" last_modified="2017-01-11T09:34:23.000" size="270336" MD5="fa11d8719f82d99f034a9ab2e52ac446">
+        <folder name="folder2a" last_modified="2017-01-13T08:51:28.000">
+          <file name="sample2a" last_modified="2017-01-13T08:51:28.000" size="270336" MD5="fa11d8719f82d99f034a9ab2e52ac446">
             <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
               <premis:objectIdentifier>
                 <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
-                <premis:objectIdentifierValue>3198466e-bbad-46c8-86bb-9d6d739c4565</premis:objectIdentifierValue>
+                <premis:objectIdentifierValue>010b47b1-a17f-4cc1-8d47-e38bf76cf0e4</premis:objectIdentifierValue>
               </premis:objectIdentifier>
               <premis:objectCharacteristics>
                 <premis:compositionLevel>0</premis:compositionLevel>
@@ -192,14 +192,14 @@
           </file>
         </folder>
       </folder>
-      <folder name="folder3" last_modified="2017-01-11T09:36:21.000">
-        <folder name="folder3a" last_modified="2017-01-11T09:36:21.000">
-          <folder name="folder3ai" last_modified="2017-01-11T09:38:02.000">
-            <file name="random3ai" last_modified="2017-01-11T09:37:20.000" size="78" MD5="8111830d5c398028e675b45187af10f6">
+      <folder name="folder3" last_modified="2017-01-13T08:51:28.000">
+        <folder name="folder3a" last_modified="2017-01-13T08:51:28.000">
+          <folder name="folder3ai" last_modified="2017-01-13T08:51:28.000">
+            <file name="random3ai" last_modified="2017-01-13T08:51:28.000" size="78" MD5="8111830d5c398028e675b45187af10f6">
               <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
                 <premis:objectIdentifier>
                   <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
-                  <premis:objectIdentifierValue>1af047c4-b1e6-4aaf-b29d-043eb9b2f150</premis:objectIdentifierValue>
+                  <premis:objectIdentifierValue>b83718c6-b467-4349-a364-9e25c3a62bce</premis:objectIdentifierValue>
                 </premis:objectIdentifier>
                 <premis:objectCharacteristics>
                   <premis:compositionLevel>0</premis:compositionLevel>
@@ -221,6 +221,81 @@
               </premis:object>
             </file>
           </folder>
+        </folder>
+      </folder>
+      <folder name="folder4-deleted" last_modified="2017-01-13T08:51:28.000">
+        <file name="deleted-sample4.m4v" last_modified="2017-01-13T08:51:28.000" size="2606211" MD5="a6f6fd76fed0770862b9ff0049b357d0">
+          <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
+            <premis:objectIdentifier>
+              <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
+              <premis:objectIdentifierValue>5c822e8e-8a00-42d0-a3e3-ff466c8346d6</premis:objectIdentifierValue>
+            </premis:objectIdentifier>
+            <premis:objectCharacteristics>
+              <premis:compositionLevel>0</premis:compositionLevel>
+              <premis:fixity>
+                <premis:messageDigestAlgorithm>MD5</premis:messageDigestAlgorithm>
+                <premis:messageDigest>a6f6fd76fed0770862b9ff0049b357d0</premis:messageDigest>
+                <premis:messageDigestOriginator>OIS File Information</premis:messageDigestOriginator>
+              </premis:fixity>
+              <premis:size>2606211</premis:size>
+              <premis:format>
+                <premis:formatDesignation>
+                  <premis:formatName>MPEG-4 Media File</premis:formatName>
+                </premis:formatDesignation>
+                <premis:formatRegistry>
+                  <premis:formatRegistryName>http://www.nationalarchives.gov.uk/pronom</premis:formatRegistryName>
+                  <premis:formatRegistryKey>fmt/199</premis:formatRegistryKey>
+                </premis:formatRegistry>
+                <premis:formatNote>application/mp4, video/mp4</premis:formatNote>
+                <premis:formatNote>DROID Signature File Version: 88</premis:formatNote>
+                <premis:formatNote>Identified by: Droid v6.1.5</premis:formatNote>
+              </premis:format>
+              <premis:format>
+                <premis:formatDesignation>
+                  <premis:formatName>ISO Media, MPEG v4 system, iTunes AVC-LC</premis:formatName>
+                </premis:formatDesignation>
+                <premis:formatNote>video/mp4</premis:formatNote>
+                <premis:formatNote>Identified by: file utility v5.11</premis:formatNote>
+              </premis:format>
+            </premis:objectCharacteristics>
+            <premis:originalName>deleted-sample4.m4v</premis:originalName>
+          </premis:object>
+        </file>
+      </folder>
+      <folder name="folder5-changed" last_modified="2017-01-13T08:51:28.000">
+        <folder name="folder5a-changed" last_modified="2017-01-13T08:51:28.000">
+          <file name="changed-sample5a.txt" last_modified="2017-01-13T08:51:28.000" size="2971" MD5="d61e884cdf73257617e7947defe8eb09">
+            <premis:object xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:uuid="java:java.util.UUID" xsi:type="premis:file">
+              <premis:objectIdentifier>
+                <premis:objectIdentifierType>uuid</premis:objectIdentifierType>
+                <premis:objectIdentifierValue>a9f174e9-4884-4e20-a899-d96291668dd8</premis:objectIdentifierValue>
+              </premis:objectIdentifier>
+              <premis:objectCharacteristics>
+                <premis:compositionLevel>0</premis:compositionLevel>
+                <premis:fixity>
+                  <premis:messageDigestAlgorithm>MD5</premis:messageDigestAlgorithm>
+                  <premis:messageDigest>d61e884cdf73257617e7947defe8eb09</premis:messageDigest>
+                  <premis:messageDigestOriginator>OIS File Information</premis:messageDigestOriginator>
+                </premis:fixity>
+                <premis:size>2971</premis:size>
+                <premis:format>
+                  <premis:formatDesignation>
+                    <premis:formatName>Plain text</premis:formatName>
+                  </premis:formatDesignation>
+                  <premis:formatRegistry>
+                    <premis:formatRegistryName>http://www.nationalarchives.gov.uk/pronom</premis:formatRegistryName>
+                    <premis:formatRegistryKey>x-fmt/111</premis:formatRegistryKey>
+                  </premis:formatRegistry>
+                  <premis:formatNote>text/plain</premis:formatNote>
+                  <premis:formatNote>DROID Signature File Version: 88</premis:formatNote>
+                  <premis:formatNote>Identified by: Droid v6.1.5</premis:formatNote>
+                  <premis:formatNote>Identified by: Jhove v1.11</premis:formatNote>
+                  <premis:formatNote>Identified by: file utility v5.11</premis:formatNote>
+                </premis:format>
+              </premis:objectCharacteristics>
+              <premis:originalName>changed-sample5a.txt</premis:originalName>
+            </premis:object>
+          </file>
         </folder>
       </folder>
     </folder>
