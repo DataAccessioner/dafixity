@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class DAFixity
         // Get the report and directory path
         Options options = new Options();
         options.addOption(Option.builder("r").hasArg().longOpt("report").desc("Path to Data Accessioner report file").argName("REPORT").required().build());
-        options.addOption(Option.builder("d").hasArg().longOpt("directory").desc("Base directory for accession tree in the report").argName("DIRECTORY").required().build());
+        options.addOption(Option.builder("d").hasArg().longOpt("directory").desc("Parent directory for accession tree in the report").argName("DIRECTORY").required().build());
         options.addOption(Option.builder("h").longOpt("help").desc("This help message").build());
 
         CommandLineParser optParser = new DefaultParser();
@@ -122,13 +123,28 @@ public class DAFixity
         }
 
         // Run the check
+        checkFixity(dafiles, baseDirectory);
+    }
+
+    public static void checkFixity(List<DAFile> dafiles, File baseDirectory) {
         Date startDate = new Date();
         logger.info("Starting fixity check at " + DATE_FORMAT.format(startDate));
 
         long startTime = System.currentTimeMillis();
 
         for (DAFile dafile : dafiles) {
-            System.out.println("File: '" + dafile.getFilePath().toString() +"'");
+
+            String fullpath = Paths.get(new StringBuilder(baseDirectory.getAbsolutePath())
+                    .append(Paths.get(dafile.getFilePath()
+                            .toString())
+                            .toString())
+                    .toString())
+                    .toString();
+            long fileStartTime = System.currentTimeMillis();
+            logger.info("Checking file '" + fullpath +"'");
+
+            long fileEndTime = System.currentTimeMillis();
+            long fileElapsedTime = fileEndTime - fileStartTime;
         }
 
         long endTime = System.currentTimeMillis();
@@ -167,4 +183,6 @@ public class DAFixity
                 elapsedTime - TimeUnit.MILLISECONDS.toSeconds(elapsedTime));
         return hhmmssms;
     }
+
+
 }
