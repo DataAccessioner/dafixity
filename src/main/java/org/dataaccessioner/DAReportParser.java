@@ -19,11 +19,34 @@
 
 package org.dataaccessioner;
 
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by sprater on 1/12/17.
  */
 public class DAReportParser {
 
-    public DAReportParser() {
+    private File report;
+
+    public DAReportParser(File report) {
+        this.report = report;
+    }
+
+    public List<DAFile> parse() throws ParserConfigurationException, SAXException, IOException {
+        List<DAFile> dafiles = new ArrayList<>();
+
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        SAXParser saxParser = factory.newSAXParser();
+        DAReportHandler rptHandler = new DAReportHandler();
+        saxParser.parse(report, rptHandler);
+        return rptHandler.getDafiles();
     }
 }

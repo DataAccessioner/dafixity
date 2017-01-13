@@ -28,7 +28,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -44,9 +46,9 @@ public class DAFixity
 
         String report_path = "";
         String directory_path = "";
+        List<DAFile> dafiles = new ArrayList<>();
 
         version = getVersion();
-        logger.info( "Version: " + version);
 
         // Get the report and directory path
         Options options = new Options();
@@ -54,10 +56,10 @@ public class DAFixity
         options.addOption(Option.builder("d").hasArg().longOpt("directory").desc("Base directory for accession tree in the report").argName("DIRECTORY").required().build());
         options.addOption(Option.builder("h").longOpt("help").desc("This help message").build());
 
-        CommandLineParser parser = new DefaultParser();
+        CommandLineParser optParser = new DefaultParser();
 
         try {
-            CommandLine cmd = parser.parse(options, args);
+            CommandLine cmd = optParser.parse(options, args);
 
             if (cmd != null && cmd.hasOption("h")) {
                 printHelp(options);
@@ -109,23 +111,31 @@ public class DAFixity
         logger.info("Report file is '" + reportFile.getAbsolutePath() + "'");
         logger.info("Accession directory path is '" + baseDirectory.getAbsolutePath() + "'");
 
+        // Parse the report, get our list of files
+        logger.info("Parsing report to get the list of files and their checksums");
+        DAReportParser rptParser = new DAReportParser(reportFile);
+        try {
+            dafiles = rptParser.parse();
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            e.printStackTrace();
+        }
+
+        // Run the check
         Date startDate = new Date();
         logger.info("Starting fixity check at " + DATE_FORMAT.format(startDate));
 
-        // Run the check
         long startTime = System.currentTimeMillis();
 
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException ie) {
-            logger.info("Run interrupted!");
+        for (DAFile dafile : dafiles) {
+            System.out.println("File: '" + dafile.getFilePath().toString() +"'");
         }
 
         long endTime = System.currentTimeMillis();
         long elapsedTime = endTime - startTime;
         Date endDate = new Date();
         logger.info("Ending fixity check at " + DATE_FORMAT.format(endDate));
-        logger.info("Run time: " + getDuration(elapsedTime));
+        logger.info("Fixity check run time: " + getDuration(elapsedTime));
     }
 
     private static void printHelp(Options opts) {
