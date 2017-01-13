@@ -32,6 +32,7 @@ import java.util.List;
  */
 public class DAReportHandler extends DefaultHandler {
 
+    private static String accessionID = "unknown";
     private static StringBuilder currpath;
     private static List<DAFile> dafiles;
 
@@ -44,14 +45,16 @@ public class DAReportHandler extends DefaultHandler {
         if (dafiles == null)
             dafiles = new ArrayList<>();
 
-        if (qName.equalsIgnoreCase("folder")) {
+        if (qName.equalsIgnoreCase("accession")) {
+            accessionID = attributes.getValue("number");
+        } else if (qName.equalsIgnoreCase("folder")) {
             String dirname = attributes.getValue("name");
             currpath.append(File.separator).append(dirname);
         } else if (qName.equalsIgnoreCase("file")) {
             String filename = attributes.getValue("name");
             String checksum = attributes.getValue("MD5");
             currpath.append(File.separator).append(filename);
-            DAFile dafile = new DAFile(new File(currpath.toString()), checksum);
+            DAFile dafile = new DAFile(new File(currpath.toString()), checksum, accessionID);
             dafiles.add(dafile);
         }
     }

@@ -28,10 +28,12 @@ public class DAFile {
 
     File filePath;
     String checksum;
+    String accessionID;
 
-    public DAFile(File filePath, String checksum) {
+    public DAFile(File filePath, String checksum, String accessionID) {
         this.filePath = filePath;
         this.checksum = checksum;
+        this.accessionID = accessionID;
     }
 
     public File getFilePath() {
@@ -48,5 +50,13 @@ public class DAFile {
 
     public void setChecksum(String checksum) {
         this.checksum = checksum;
+    }
+
+    public String getAccessionID() {
+        return accessionID;
+    }
+
+    public void setAccessionID(String accessionID) {
+        this.accessionID = accessionID;
     }
 }

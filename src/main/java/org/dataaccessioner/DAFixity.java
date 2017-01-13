@@ -20,10 +20,12 @@
 package org.dataaccessioner;
 
 import org.apache.commons.cli.*;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Paths;
@@ -35,6 +37,10 @@ import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+// TODO:  add CSVREPORT log appender http://stackoverflow.com/questions/2488558/logback-to-log-different-messages-to-two-files
+//        format:  date;accession ID;file;status;runtime
+// TODO:  documentation
+// TODO:  log to file, minimal output to stdout
 public class DAFixity
 {
 
@@ -143,8 +149,16 @@ public class DAFixity
             long fileStartTime = System.currentTimeMillis();
             logger.info("Checking file '" + fullpath +"'");
 
+            File file = new File(fullpath);
+            if (! file.isFile() || ! file.canRead()) {
+                logger.warn("File '" + fullpath + "' not found or not readable.  Skipping.");
+                continue;
+            }
+            checkFileChecksum(file, dafile.getChecksum());
+
             long fileEndTime = System.currentTimeMillis();
             long fileElapsedTime = fileEndTime - fileStartTime;
+            logger.info("'" + file.toString() +"': check runtime: " + getDuration(fileElapsedTime));
         }
 
         long endTime = System.currentTimeMillis();
@@ -154,12 +168,29 @@ public class DAFixity
         logger.info("Fixity check run time: " + getDuration(elapsedTime));
     }
 
+    public static boolean checkFileChecksum (File dafile, String storedChecksum) {
+        boolean isOK = false;
+        try {
+            String md5sum = DigestUtils.md5Hex(new FileInputStream(dafile));
+            if (md5sum.equals(storedChecksum)) {
+                logger.info("'" + dafile.toString() + "': OK: checksums match");
+                isOK = true;
+            } else {
+                logger.warn("'" + dafile.toString() + "': MISMATCH: checksums do not match");
+                logger.warn("'" + dafile.toString() + "': expected " + storedChecksum + ", got " + md5sum );
+            }
+        } catch (IOException ioe) {
+            logger.error("Error opening '" + dafile.getAbsolutePath() + "': " + ioe.getMessage());
+        }
+
+        return isOK;
+    }
+
     private static void printHelp(Options opts) {
         HelpFormatter formatter = new HelpFormatter();
         formatter.setOptionComparator(null);
         formatter.printHelp(NAME + " [options]", opts);
     }
-
 
     private static String getVersion() {
         String propfile = "/version.properties";
