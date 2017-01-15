@@ -133,6 +133,46 @@
         </executions>
       </plugin>
       <plugin>
+        <groupId>com.akathist.maven.plugins.launch4j</groupId>
+        <artifactId>launch4j-maven-plugin</artifactId>
+        <version>1.7.14</version>
+        <executions>
+          <execution>
+            <id>l4j-clui</id>
+            <phase>package</phase>
+            <goals>
+              <goal>launch4j</goal>
+            </goals>
+            <configuration>
+              <headerType>console</headerType>
+              <jar>${project.build.directory}/${artifactId}-${version}.jar</jar>
+              <outfile>${project.build.directory}/dafixity.exe</outfile>
+              <downloadUrl>http://dataaccessioner.org/dafixity/</downloadUrl>
+              <classPath>
+                <mainClass>org.dataaccessioner.DAFixity</mainClass>
+                <preCp>anything</preCp>
+              </classPath>
+              <jre>
+                <minVersion>1.8.0</minVersion>
+                <jdkPreference>preferJre</jdkPreference>
+              </jre>
+              <versionInfo>
+                <fileVersion>1.0.0.0</fileVersion>
+                <txtFileVersion>1.0.0.0</txtFileVersion>
+                <fileDescription>${project.name}</fileDescription>
+                <copyright>2017 Scott Prater</copyright>
+                <productVersion>1.0.0.0</productVersion>
+                <txtProductVersion>1.0.0.0</txtProductVersion>
+                <productName>${project.name}</productName>
+                <companyName>dataaccessioner.org</companyName>
+                <internalName>dafixity</internalName>
+                <originalFilename>dafixity.exe</originalFilename>
+              </versionInfo>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>2.5.1</version>
         <configuration>
