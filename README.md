@@ -40,6 +40,9 @@ All dependencies are included within the package.
 
 Run `dafixity` in the `dafixity-<version>` folder:
 
+    $ cd /path/to/dafixity-<version>
+    $ ./dafixity -r /path/to/da/report -d /path/to/top/of/accession/tree
+
     usage: dafixity [options]
         -r,--report <REPORT>         Path to Data Accessioner report file
         -d,--directory <DIRECTORY>   Parent directory for accession tree in the
