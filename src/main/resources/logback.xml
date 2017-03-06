@@ -2,8 +2,10 @@
 
 <configuration>
 
+  <timestamp key="runTimestamp" datePattern="yyyyMMddHHmmss"/>
+
   <appender name="LOGFILE" class="ch.qos.logback.core.FileAppender">
-    <file>logs/dafixity.log</file>
+    <file>logs/dafixity-${runTimestamp}.log</file>
     <append>true</append>
     <encoder>
       <pattern>%date{ISO8601} %-5level - %msg%n</pattern>
@@ -11,7 +13,7 @@
   </appender>
 
   <appender name="CSVREPORT" class="ch.qos.logback.core.FileAppender">
-    <file>logs/dafixity-report.csv</file>
+    <file>logs/dafixity-report-${runTimestamp}.csv</file>
     <append>true</append>
     <encoder>
       <pattern>%msg%n</pattern>

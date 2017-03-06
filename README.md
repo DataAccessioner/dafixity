@@ -49,8 +49,10 @@ Run `dafixity` in the `dafixity-<version>` folder:
                                      report
         -h,--help                    This help message
 
-The logs are written to `logs/dafixity.log`;  the report is written to 
-`logs/dafixity-report.csv`.
+The logs are written to `logs/dafixity-<YYYYMMDDHHmmss>.log`;  the 
+report is written to `logs/dafixity-report-<YYYYMMDDHHmmss>.csv`, 
+where *YYYYMMDDHHmmss* is the date-time stamp of the beginning of 
+the run.
 
 ## Contributing
 
