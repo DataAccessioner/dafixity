@@ -1,3 +1,5 @@
+**Notice:** *As of the beginning of 2023 the Data Accessioner project no longer has any active developers maintaining it.*
+
 # DAFixity:  Data Accessioner Fixity Checker
 
 DAFixity is a simple file fixity checker designed to work with the
