@@ -17,7 +17,7 @@ files on disk.  It produces a detailed log, as well as a CSV report.
 
 DAFixity is built using Maven.  To build, clone the repository:
 
-git clone https://github.com/sprater/dafixity.git
+git clone https://github.com/DataAccessioner/dafixity.git
 
 Then execute the following command in the top-level directory:
 
