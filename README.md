@@ -8,8 +8,6 @@ Accessioner, creates a list of accessioned files and their
 checksums, then validates those checksums against the accessioned
 files on disk.  It produces a detailed log, as well as a CSV report.
 
-Home: <http://www.dataaccessioner.org>
-
 ## Build prerequisites
 
   * A recent version of Java (>= 1.8)
